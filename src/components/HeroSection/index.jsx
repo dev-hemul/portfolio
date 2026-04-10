@@ -25,23 +25,16 @@ const HeroContainer = styled.div`
 
 const HeroBg = styled.div`
   position: absolute;
+  inset: -22%;
   display: flex;
-  justify-content: end;
-  top: 50%;
-  right: 0;
-  bottom: 0;
-  left: 68%;
-  overflow: hidden;
-  width: 82%;
-  height: 100%;
-  padding: 0 30px;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  z-index: -1;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  z-index: 0;
+  pointer-events: none;
 
-  @media screen and (max-width: 960px) {
-    padding: 0;
-    justify-content: center;
+  @media screen and (max-width: 640px) {
+    inset: -25%;
   }
 `;
 
@@ -61,6 +54,7 @@ const HeroInnerContainer = styled.div`
 const HeroLeftContainer = styled.div`
   width: 100%;
   order: 1;
+
   @media screen and (max-width: 960px) {
     order: 2;
     margin-bottom: 32px;
@@ -90,12 +84,24 @@ const HeroRightContainer = styled.div`
     justify-content: center;
     align-items: center;
     margin-bottom: 80px;
-
   }
+
   @media screen and (max-width: 640px) {
     order: 1;
     margin-bottom: 30px;
+  }
+`;
 
+const HeroVisualContainer = styled.div`
+  position: relative;
+  width: min(100%, 400px);
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: 640px) {
+    width: min(100%, 280px);
   }
 `;
 
@@ -189,37 +195,23 @@ const ResumeButton = styled.a`
     padding: 12px 0;
     font-size: 18px;
   }
-`
+`;
 
 const Image = styled.img`
   width: 100%;
   height: 100%;
   position: relative;
+  z-index: 1;
   border-radius: 50%;
-  max-width: 400px;
-  max-height: 400px;
   object-fit: cover;
   object-position: top;
   border: 2px solid ${({theme}) => (theme.primary)};
-
-  @media screen and (max-width: 768px) {
-    max-height: 400px;
-    max-width: 400px;
-  }
-
-  @media screen and (max-width: 640px) {
-    max-width: 280px;
-    max-height: 280px;
-  }
-`
+`;
 
 const Hero = () => {
   return (
     <div id="about">
       <HeroContainer>
-        <HeroBg>
-          <HeroBgAnimation />
-        </HeroBg>
         <HeroInnerContainer>
           <HeroLeftContainer>
             <Title>Hi, I am <br />
@@ -245,11 +237,17 @@ const Hero = () => {
               Check Resume
             </ResumeButton>
           </HeroLeftContainer>
+
           <HeroRightContainer>
-            <Image
-              src={HeroImg}
-              alt="hero"
-            />
+            <HeroVisualContainer>
+              <HeroBg>
+                <HeroBgAnimation />
+              </HeroBg>
+              <Image
+                src={HeroImg}
+                alt="hero"
+              />
+            </HeroVisualContainer>
           </HeroRightContainer>
         </HeroInnerContainer>
       </HeroContainer>
