@@ -104,11 +104,11 @@ const Title = styled.div`
   font-weight: 700;
   color: ${({theme}) => (theme.text_primary)};
   line-height: 68px;
-  
+
   @media screen and (max-width: 960px) {
     text-align: center;
   }
-  
+
   @media screen and (max-width: 640px) {
     font-size: 40px;
     line-height: 48px;
@@ -123,11 +123,11 @@ const TextLoop = styled.div`
   line-height: 68px;
   gap: 12px;
   display: flex;
-  
+
   @media screen and (max-width: 960px) {
     text-align: center;
   }
-  
+
   @media screen and (max-width: 640px) {
     font-size: 22px;
     line-height: 48px;
@@ -142,14 +142,14 @@ const Span = styled.span`
 
 const Subtitle = styled.div`
   font-size: 20px;
-  color: ${({theme}) => (theme.text_primary+95)};
+  color: ${({theme}) => (theme.text_primary + 95)};
   line-height: 32px;
   margin-bottom: 42px;
-  
+
   @media screen and (max-width: 960px) {
     text-align: center;
   }
-  
+
   @media screen and (max-width: 640px) {
     font-size: 16px;
     line-height: 32px;
@@ -158,36 +158,37 @@ const Subtitle = styled.div`
 
 const ResumeButton = styled.a`
   -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-    text-decoration: none;
-    width: 95%;
-    max-width: 300px;
-    text-align: center;
-    padding: 16px 0;
-    color:${({ theme }) => theme.white};
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: 600;
-    transition: all 0.2s ease-in-out !important;
-    background: hsla(271, 100%, 50%, 1);
-    background: linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-    background: -moz-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-    background: -webkit-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
-    box-shadow:  20px 20px 60px #1F2634,
-    -20px -20px 60px #1F2634;
-    &:hover {
-        transform: scale(1.05);
+  -moz-appearance: button;
+  appearance: button;
+  text-decoration: none;
+  width: 95%;
+  max-width: 300px;
+  text-align: center;
+  padding: 16px 40px;
+  color: ${({theme}) => theme.white};
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out !important;
+  background: hsla(271, 100%, 50%, 1);
+  background: linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
+  background: -moz-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
+  background: -webkit-linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
+  box-shadow: 20px 20px 60px #1F2634,
+  -20px -20px 60px #1F2634;
+
+  &:hover {
+    transform: scale(1.05);
     transition: all 0.4s ease-in-out;
-    box-shadow:  20px 20px 60px #1F2634;
+    box-shadow: 20px 20px 60px #1F2634;
     filter: brightness(1);
-    }    
-  
-    @media (max-width: 640px) {
-        padding: 12px 0;
-        font-size: 18px;
-    } 
+  }
+
+  @media (max-width: 640px) {
+    padding: 12px 0;
+    font-size: 18px;
+  }
 `
 
 const Image = styled.img`
@@ -200,12 +201,12 @@ const Image = styled.img`
   object-fit: cover;
   object-position: top;
   border: 2px solid ${({theme}) => (theme.primary)};
-  
+
   @media screen and (max-width: 768px) {
     max-height: 400px;
     max-width: 400px;
   }
-  
+
   @media screen and (max-width: 640px) {
     max-width: 280px;
     max-height: 280px;
@@ -217,7 +218,7 @@ const Hero = () => {
     <div id="about">
       <HeroContainer>
         <HeroBg>
-          <HeroBgAnimation/>
+          <HeroBgAnimation />
         </HeroBg>
         <HeroInnerContainer>
           <HeroLeftContainer>
@@ -245,7 +246,10 @@ const Hero = () => {
             </ResumeButton>
           </HeroLeftContainer>
           <HeroRightContainer>
-            <Image src={HeroImg} alt="hero" />
+            <Image
+              src={HeroImg}
+              alt="hero"
+            />
           </HeroRightContainer>
         </HeroInnerContainer>
       </HeroContainer>
