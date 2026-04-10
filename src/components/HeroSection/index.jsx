@@ -214,11 +214,11 @@ const Hero = () => {
       <HeroContainer>
         <HeroInnerContainer>
           <HeroLeftContainer>
-            <Title>Hi, I am <br />
+            <Title>Вітаю! Мене звати <br />
               {Bio.name}
             </Title>
             <TextLoop>
-              I am a
+              Я
               <Span>
                 <Typewriter
                   options={{
