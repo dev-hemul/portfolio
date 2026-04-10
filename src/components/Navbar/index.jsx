@@ -4,6 +4,7 @@ import {DiCssdeck} from "react-icons/di";
 import {useState} from "react";
 import {FaBars} from "react-icons/fa";
 import {useTheme} from "@mui/material";
+import {Bio} from "../../data/constants";
 
 const Nav = styled.nav`
   background-color: ${({theme}) => (theme.card_light)};
@@ -121,6 +122,7 @@ const GitHubButton = styled.a`
   cursor: pointer;
   height: 70%;
   white-space: nowrap;
+  text-decoration: none;
 
   &:hover {
     background-color: ${({theme}) => (theme.primary)};
@@ -202,7 +204,13 @@ const Navbar = () => {
           <NavLink href="education">Education</NavLink>
         </NavItems>
         <ButtonContainer>
-          <GitHubButton>Github Profile</GitHubButton>
+          <GitHubButton
+            href={Bio.github}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Github Profile
+          </GitHubButton>
         </ButtonContainer>
       </NavContainer>
       {open && (
@@ -244,8 +252,9 @@ const Navbar = () => {
               color: 'white',
               width: 'max-content'
             }}
-            href='/'
+            href={Bio.github}
             target="_blank"
+            rel="noreferrer"
           >Github Profile</GitHubButton>
         </MobileMenu>
       )}

@@ -218,7 +218,7 @@ const Hero = () => {
               {Bio.name}
             </Title>
             <TextLoop>
-              Я
+              Я —
               <Span>
                 <Typewriter
                   options={{
