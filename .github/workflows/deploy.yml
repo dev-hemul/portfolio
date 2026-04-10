@@ -23,12 +23,12 @@ jobs:
           node-version: 20
           cache: 'pnpm'
 
-      # ✅ FIX: pnpm теперь доступен
-      - name: Enable Corepack
-        run: corepack enable
-
-      - name: Prepare pnpm
-        run: corepack prepare pnpm@9 --activate
+      # ✅ ВАЖНО: pnpm устанавливается ТУТ
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+          run_install: false
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
