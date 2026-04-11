@@ -158,7 +158,6 @@ const MobileMenu = styled.div`
   opacity: ${({open}) => (open ? '1' : '0')};
   z-index: ${({open}) => (open ? '1' : '-1')};
   list-style: none;
-  height: 100vh;
 `;
 
 const MobileMenuLinks = styled(LinkR)`

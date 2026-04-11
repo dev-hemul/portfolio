@@ -10,6 +10,7 @@ import Axios from "../assets/skills/axios.svg";
 import Zod from "../assets/skills/zod.svg";
 import ReactToastify from "../assets/skills/react-toastify.svg";
 import I18Next from "../assets/skills/i18next.svg";
+import Sass from "../assets/skills/sass.svg";
 import Motion from "../assets/skills/motion.svg";
 import StyledComponents from "../assets/skills/styled-components.svg";
 import CSSImg from "../assets/skills/css.svg";
@@ -94,10 +95,10 @@ export const skills = [
         name: "TypeScript",
         image: TypeScript
       },
-      {
+      /*{
         name: "Next JS",
         image: NextJsImg,
-      },
+      },*/
       {
         name: "Tailwind",
         image: Tailwind,
@@ -126,6 +127,10 @@ export const skills = [
         name: "i18Next",
         image: I18Next,
       },
+      /*{
+        name: "Sass",
+        image: Sass,
+      },*/
       {
         name: "Motion",
         image: Motion,
