@@ -170,7 +170,7 @@ const ResumeButton = styled.a`
   width: 95%;
   max-width: 300px;
   text-align: center;
-  padding: 16px 40px;
+  padding: 25px 30px;
   color: ${({theme}) => theme.white};
   border-radius: 20px;
   cursor: pointer;
@@ -192,7 +192,7 @@ const ResumeButton = styled.a`
   }
 
   @media (max-width: 640px) {
-    padding: 12px 0;
+    padding: 20px 0;
     font-size: 18px;
   }
 `;
@@ -234,7 +234,7 @@ const Hero = () => {
               href={Bio.resume}
               target="_blank"
             >
-              Check Resume
+              Переглянути резюме
             </ResumeButton>
           </HeroLeftContainer>
 
