@@ -232,7 +232,7 @@ const Hero = () => {
             <Subtitle>{Bio.description}</Subtitle>
             <ResumeButton
               href={Bio.resume}
-              target="display"
+              target="_blank"
             >
               Check Resume
             </ResumeButton>
