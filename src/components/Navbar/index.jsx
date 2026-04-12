@@ -123,6 +123,7 @@ const GitHubButton = styled.a`
   height: 70%;
   white-space: nowrap;
   text-decoration: none;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     background-color: ${({theme}) => (theme.primary)};
@@ -179,17 +180,35 @@ const Navbar = () => {
   return (
     <Nav>
       <NavContainer>
-        <NavLogo to="/">
-          <a
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              color: 'white',
-              marginBottom: '20px',
-              cursor: 'pointer'
-            }}
-          >
-            <DiCssdeck size="3rem" /> <Span>Portfolio</Span>
+        <NavLogo to='/'>
+          <a style={
+            { display: "flex",
+              alignItems: "center",
+              color: "white",
+              marginBottom: '20',
+              cursor: 'pointer',
+              fontWeight: 'bold',
+              fontSize: '18px',
+            }}>
+            <div style={{
+              color: 'rgb(133, 76, 230)',
+              fontSize: '32px',
+              fontWeight: '500',
+              marginRight: '5px',
+            }}>{"<"}</div>
+            Нечуй-Вітер
+            <div style={{
+              color: 'rgb(133, 76, 230)',
+              fontSize: '32px',
+              fontWeight: '500',
+            }}>/</div>
+            Євгеній
+            <div style={{
+              color: 'rgb(133, 76, 230)',
+              fontSize: '32px',
+              fontWeight: '500',
+              marginLeft: '5px',
+            }}>{">"}</div>
           </a>
         </NavLogo>
         <MobileIcon>
