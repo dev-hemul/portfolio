@@ -29,8 +29,11 @@ const NavContainer = styled.div`
   width: 100%;
   padding: 0 24px;
   max-width: 1200px;
+  @media screen and (max-width: 960px) {
+    padding: 0 16px;
+  }
   @media screen and (max-width: 850px) {
-    padding: 0 12px;
+    padding: 0 10px;
   }
 `;
 
@@ -45,6 +48,84 @@ const NavLogo = styled(LinkR)`
   color: ${({theme}) => (theme.primary)};
   @media screen and (max-width: 768px) {
     padding: 0;
+  }
+`;
+
+const NavLogoContent = styled.div`
+  display: flex;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  white-space: nowrap;
+  
+  @media screen and (max-width: 1100px) {
+    font-size: 16px;
+  }
+  
+  @media screen and (max-width: 640px) {
+    font-size: 15px;
+  }
+  
+  @media screen and (max-width: 480px) {
+    font-size: 14px;
+  }
+`;
+
+const Bracket = styled.div`
+  color: ${({theme}) => (theme.primary)};
+  font-size: 32px;
+  font-weight: 500;
+  margin-right: 5px;
+  
+  @media screen and (max-width: 1100px) {
+    font-size: 26px;
+  }
+  
+  @media screen and (max-width: 640px) {
+    font-size: 22px;
+  }
+  
+  @media screen and (max-width: 480px) {
+    font-size: 20px;
+  }
+`;
+
+const Slash = styled.div`
+  color: ${({theme}) => (theme.primary)};
+  font-size: 32px;
+  font-weight: 500;
+  
+  @media screen and (max-width: 1100px) {
+    font-size: 26px;
+  }
+  
+  @media screen and (max-width: 640px) {
+    font-size: 22px;
+  }
+  
+  @media screen and (max-width: 480px) {
+    font-size: 20px;
+  }
+`;
+
+const BracketRight = styled.div`
+  color: ${({theme}) => (theme.primary)};
+  font-size: 32px;
+  font-weight: 500;
+  margin-left: 5px;
+  
+  @media screen and (max-width: 1100px) {
+    font-size: 26px;
+  }
+  
+  @media screen and (max-width: 640px) {
+    font-size: 22px;
+  }
+  
+  @media screen and (max-width: 480px) {
+    font-size: 20px;
   }
 `;
 
@@ -68,9 +149,15 @@ const NavItems = styled.ul`
   align-items: center;
   gap: 32px;
   list-style: none;
-  @media screen and (max-width: 850px) {
+  
+  @media screen and (max-width: 1100px) {
     gap: 16px;
   }
+  
+  @media screen and (max-width: 850px) {
+    gap: 12px;
+  }
+  
   @media screen and (max-width: 768px) {
     display: none;
   }
@@ -82,6 +169,15 @@ const NavLink = styled.a`
   cursor: pointer;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
+  white-space: nowrap;
+
+  @media screen and (max-width: 1100px) {
+    font-size: 16px;
+  }
+  
+  @media screen and (max-width: 850px) {
+    font-size: 14px;
+  }
 
   &:hover {
     color: ${({theme}) => (theme.primary)};
@@ -96,11 +192,14 @@ const ButtonContainer = styled.div`
   width: auto;
   height: 100%;
   padding: 0 50px;
+  @media screen and (max-width: 1032px) {
+    padding: 0 10px;
+  }
   @media screen and (max-width: 960px) {
     padding: 0 24px;
   }
   @media screen and (max-width: 850px) {
-    padding: 0 12px;
+    padding: 0 10px;
   }
   @media screen and (max-width: 768px) {
     display: none;
@@ -141,7 +240,9 @@ const Span = styled.div`
   font-size: 18px;
 `;
 
-const MobileMenu = styled.div`
+const MobileMenu = styled.div.withConfig({
+  shouldForwardProp: (prop) => !['$open'].includes(prop),
+})`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -153,11 +254,11 @@ const MobileMenu = styled.div`
   padding: 12px 40px 24px 40px;
   background-color: ${({theme}) => (theme.card_light + 99)};
   transition: all 0.3s ease-in-out;
-  transform: ${({open}) => (open ? 'translateX(0)' : 'translateX(100%)')};
+  transform: ${({$open}) => ($open ? 'translateX(0)' : 'translateX(100%)')};
   border-radius: 0 0 20px 20px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-  opacity: ${({open}) => (open ? '1' : '0')};
-  z-index: ${({open}) => (open ? '1' : '-1')};
+  opacity: ${({$open}) => ($open ? '1' : '0')};
+  z-index: ${({$open}) => ($open ? '1' : '-1')};
   list-style: none;
 `;
 
@@ -181,45 +282,23 @@ const Navbar = () => {
     <Nav>
       <NavContainer>
         <NavLogo to='/'>
-          <a style={
-            { display: "flex",
-              alignItems: "center",
-              color: "white",
-              marginBottom: '20',
-              cursor: 'pointer',
-              fontWeight: 'bold',
-              fontSize: '18px',
-            }}>
-            <div style={{
-              color: 'rgb(133, 76, 230)',
-              fontSize: '32px',
-              fontWeight: '500',
-              marginRight: '5px',
-            }}>{"<"}</div>
+          <NavLogoContent>
+            <Bracket>{"<"}</Bracket>
             Нечуй-Вітер
-            <div style={{
-              color: 'rgb(133, 76, 230)',
-              fontSize: '32px',
-              fontWeight: '500',
-            }}>/</div>
+            <Slash>/</Slash>
             Євгеній
-            <div style={{
-              color: 'rgb(133, 76, 230)',
-              fontSize: '32px',
-              fontWeight: '500',
-              marginLeft: '5px',
-            }}>{">"}</div>
-          </a>
+            <BracketRight>{">"}</BracketRight>
+          </NavLogoContent>
         </NavLogo>
         <MobileIcon>
           <FaBars onClick={() => setOpen(!open)} />
         </MobileIcon>
         <NavItems>
-          <NavLink href="about">Про себе</NavLink>
-          <NavLink href="skills">Навички</NavLink>
-          <NavLink href="experience">Досвід</NavLink>
-          <NavLink href="projects">Проекти</NavLink>
-          <NavLink href="education">Освіта</NavLink>
+          <NavLink href="#about">Про себе</NavLink>
+          <NavLink href="#skills">Навички</NavLink>
+          <NavLink href="#experience">Досвід</NavLink>
+          <NavLink href="#projects">Проекти</NavLink>
+          <NavLink href="#education">Освіта</NavLink>
         </NavItems>
         <ButtonContainer>
           <GitHubButton
@@ -232,37 +311,37 @@ const Navbar = () => {
         </ButtonContainer>
       </NavContainer>
       {open && (
-        <MobileMenu open={open}>
+        <MobileMenu $open={open}>
           <MobileMenuLinks
             href="#about"
             onClick={() => {
               setOpen(!open)
             }}
-          >About</MobileMenuLinks>
+          >Про себе</MobileMenuLinks>
           <MobileMenuLinks
             href="#skills"
             onClick={() => {
               setOpen(!open)
             }}
-          >Skills</MobileMenuLinks>
+          >Навички</MobileMenuLinks>
           <MobileMenuLinks
             href="#experience"
             onClick={() => {
               setOpen(!open)
             }}
-          >Experience</MobileMenuLinks>
+          >Досвід</MobileMenuLinks>
           <MobileMenuLinks
             href="#projects"
             onClick={() => {
               setOpen(!open)
             }}
-          >Projects</MobileMenuLinks>
+          >Проекти</MobileMenuLinks>
           <MobileMenuLinks
             href="#education"
             onClick={() => {
               setOpen(!open)
             }}
-          >Education</MobileMenuLinks>
+          >Освіта</MobileMenuLinks>
           <GitHubButton
             style={{
               padding: '10px 16px',

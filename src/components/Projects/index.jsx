@@ -1,17 +1,21 @@
 import styled from 'styled-components';
 import {useState} from "react";
+import ProjectCard from "../Cards/ProjectCard";
+import {projects} from "../../data/constants";
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-`
+  background: linear-gradient(343.07deg, rgba(132, 59, 206, 0.06) 5.71%, rgba(132, 59, 206, 0) 64.83%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    align-items: center;
+    clip-path: polygon(0 0, 100% 0, 100% 100%,100% 98%, 0 100%);
+`;
 
 const Wrapper = styled.div`
-  max-width: 1100px;
+  max-width: 1350px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -20,6 +24,7 @@ const Wrapper = styled.div`
   width: 100%;
   gap: 12px; 
   color: ${({theme}) => (theme.text_primary)};
+  padding: 10px 0 100px 0;
 `;
 
 const Title = styled.h1`
@@ -47,7 +52,7 @@ const Desk = styled.p`
   }
 `;
 
-const ToggleGroup = styled.div`
+const ToggleButtonGroup = styled.div`
   display: flex;
   border: 1.5px solid ${({theme}) => (theme.primary)};
   color: ${({theme}) => (theme.primary)};
@@ -61,13 +66,15 @@ const ToggleGroup = styled.div`
   }
 `;
 
-const ToggleButton = styled.div`
+const ToggleButton = styled.div.withConfig({
+  shouldForwardProp: (prop) => !['$active'].includes(prop),
+})`
   padding: 8px 18px;
   cursor: pointer;
   border-radius: 6px;
   
-  ${({active, theme}) => 
-    active && 
+  ${({$active, theme}) => 
+    $active && 
     `
     background-color: ${(theme.primary+20)};
     `}
@@ -87,6 +94,14 @@ const Divider = styled.div`
   background-color: ${({theme}) => (theme.primary)};
 `;
 
+const CardContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 28px;
+`;
+
 const Projects = () => {
   const [toggle, setToggle] = useState('all')
 
@@ -97,23 +112,37 @@ const Projects = () => {
         <Desk>
           Ось деякі з моїх проектів
         </Desk>
-        <ToggleGroup>
-          {toggle === 'all' ? (
-          <ToggleButton active value="all" onClick={() => setToggle('all')}>ALL</ToggleButton>
-            ) : (
-              <ToggleButton value="all" onClick={() => setToggle('all')}>ALL</ToggleButton>
-            )}
-          <Divider/>
-          {toggle === 'web app' ? (
-          <ToggleButton active onClick={() => setToggle('web app')}>WEB APP`S</ToggleButton>
-            ) : (
-              <ToggleButton onClick={() => setToggle('web app')}>WEB APP`S</ToggleButton>
-          )}
-          <Divider/>
-          <ToggleButton>ANDROID APP</ToggleButton>
-          <Divider/>
-          <ToggleButton>MACHINE LEARNING</ToggleButton>
-        </ToggleGroup>
+        <ToggleButtonGroup >
+          {toggle === 'all' ?
+            <ToggleButton $active onClick={() => setToggle('all')}>All</ToggleButton>
+            :
+            <ToggleButton onClick={() => setToggle('all')}>All</ToggleButton>
+          }
+          <Divider />
+          {toggle === 'web app' ?
+            <ToggleButton $active onClick={() => setToggle('web app')}>WEB APP'S</ToggleButton>
+            :
+            <ToggleButton onClick={() => setToggle('web app')}>WEB APP'S</ToggleButton>
+          }
+          <Divider />
+          {toggle === 'android app' ?
+            <ToggleButton $active onClick={() => setToggle('android app')}>ANDROID APP'S</ToggleButton>
+            :
+            <ToggleButton onClick={() => setToggle('android app')}>ANDROID APP'S</ToggleButton>
+          }
+          <Divider />
+          {toggle === 'machine learning' ?
+            <ToggleButton $active onClick={() => setToggle('machine learning')}>MACHINE LEARNING</ToggleButton>
+            :
+            <ToggleButton onClick={() => setToggle('machine learning')}>MACHINE LEARNING</ToggleButton>
+          }
+        </ToggleButtonGroup>
+
+        <CardContainer>
+          {toggle === 'all' &&
+            projects.map((project) => <ProjectCard key={`project-${project.id}`} project={project}/>)}
+          {projects.filter((item) => item.category === toggle).map((project) => <ProjectCard key={`project-filtered-${project.id}`} project={project}/>)}
+        </CardContainer>
       </Wrapper>
     </Container>
   );

@@ -15,8 +15,12 @@ const Container = styled.div`
   align-items: center;
   position: relative;
   z-index: 1;
-  padding: 50px 0;
-`
+  padding: 40px 0 80px 0;
+  
+  @media screen and (max-width: 960px) {
+    padding: 0;
+  }
+`;
 
 const Wrapper = styled.div`
   max-width: 1100px;
@@ -64,7 +68,7 @@ const TimeLineSection = styled.div`
   align-items: center;
   justify-content: center;
   gap: 12px;
-`
+`;
 
 const Experience = () => {
   return (
@@ -76,7 +80,7 @@ const Experience = () => {
           <Timeline>
             {experiences.map((experience, index) => {
               return (
-                <TimelineItem>
+                <TimelineItem key={`experience-timeline-item-${index}`}>
                   <TimelineSeparator>
                     <TimelineDot variant="outlined" color="secondary" />
                     {index !== experiences.length - 1 && <TimelineConnector />}

@@ -132,17 +132,17 @@ const Skills = () => {
           Ось деякі з моїх навичок, над якими я працював протягом останніх 2 років
         </Desk>
         <SkillsContainer>
-          {skills.map((item) => {
+          {skills.map((item, index) => {
             return (
               <Skill
-                key={item.id}
+                key={`skill-category-${index}`}
                 className="skill"
               >
                 <SkillTitle>{item.title}</SkillTitle>
                 <SkillList>
-                  {item.skills.map((skill) => {
+                  {item.skills.map((skill, skillIndex) => {
                     return(
-                    <SkillItem>
+                    <SkillItem key={`skill-item-${index}-${skillIndex}`}>
                       <SkillImage src={skill.image} alt={skill.name} />
                       {skill.name}
                     </SkillItem>
