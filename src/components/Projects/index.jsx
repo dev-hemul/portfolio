@@ -127,7 +127,7 @@ const Projects = () => {
             :
             <ToggleButton onClick={() => setToggle('web app')}>WEB APP'S</ToggleButton>
           }
-          <Divider />
+          {/*<Divider />
           {toggle === 'android app' ?
             <ToggleButton $active onClick={() => setToggle('android app')}>ANDROID APP'S</ToggleButton>
             :
@@ -138,7 +138,7 @@ const Projects = () => {
             <ToggleButton $active onClick={() => setToggle('machine learning')}>MACHINE LEARNING</ToggleButton>
             :
             <ToggleButton onClick={() => setToggle('machine learning')}>MACHINE LEARNING</ToggleButton>
-          }
+          }*/}
         </ToggleButtonGroup>
 
         <CardContainer>

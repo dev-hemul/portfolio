@@ -124,11 +124,11 @@ const ProjectCard = ({project}) => {
         <Date>{project.date}</Date>
         <Description>{project.description}</Description>
       </Details>
-      <Members>
+      {/*<Members>
         {project.member?.map((member, index) => (
           <Avatar key={`project-member-${index}`} src={member.img} alt={member.name} />
         ))}
-      </Members>
+      </Members>*/}
     </Card>
   );
 };
