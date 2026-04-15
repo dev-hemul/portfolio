@@ -1,7 +1,7 @@
-import { useRef, useState } from 'react';
+import {useRef, useState} from 'react';
 import styled from 'styled-components';
 import emailjs from '@emailjs/browser';
-import { Alert, Snackbar } from '@mui/material';
+import {Alert, Snackbar} from '@mui/material';
 
 const Container = styled.div`
   display: flex;
@@ -37,7 +37,7 @@ const Title = styled.div`
   text-align: center;
   font-weight: 600;
   margin-top: 20px;
-  color: ${({ theme }) => theme.text_primary};
+  color: ${({theme}) => theme.text_primary};
 
   @media (max-width: 768px) {
     margin-top: 12px;
@@ -49,7 +49,7 @@ const Desc = styled.div`
   font-size: 18px;
   text-align: center;
   max-width: 600px;
-  color: ${({ theme }) => theme.text_secondary};
+  color: ${({theme}) => theme.text_secondary};
 
   @media (max-width: 768px) {
     padding: 0 30px;
@@ -63,7 +63,7 @@ const ContactForm = styled.form`
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  background-color: ${({ theme }) => theme.card};
+  background-color: ${({theme}) => theme.card};
   padding: 32px;
   border-radius: 16px;
   box-shadow: rgba(23, 92, 230, 0.15) 0 4px 24px;
@@ -74,33 +74,33 @@ const ContactForm = styled.form`
 const ContactInput = styled.input`
   flex: 1;
   background-color: transparent;
-  border: 1px solid ${({ theme }) => theme.text_secondary};
+  border: 1px solid ${({theme}) => theme.text_secondary};
   outline: none;
   font-size: 18px;
-  color: ${({ theme }) => theme.text_primary};
+  color: ${({theme}) => theme.text_primary};
   border-radius: 12px;
   padding: 12px 16px;
   margin-bottom: 20px;
 
   &:focus {
-    border: 1px solid ${({ theme }) => theme.primary};
+    border: 1px solid ${({theme}) => theme.primary};
   }
 `;
 
 const ContactInputMessage = styled.textarea`
   flex: 1;
   background-color: transparent;
-  border: 1px solid ${({ theme }) => theme.text_secondary};
+  border: 1px solid ${({theme}) => theme.text_secondary};
   outline: none;
   font-size: 18px;
-  color: ${({ theme }) => theme.text_primary};
+  color: ${({theme}) => theme.text_primary};
   border-radius: 12px;
   padding: 12px 16px;
   resize: vertical;
   min-height: 120px;
 
   &:focus {
-    border: 1px solid ${({ theme }) => theme.primary};
+    border: 1px solid ${({theme}) => theme.primary};
   }
 `;
 
@@ -112,7 +112,7 @@ const ContactButton = styled.button`
   margin-top: 20px;
   border-radius: 12px;
   border: none;
-  color: ${({ theme }) => theme.text_primary};
+  color: ${({theme}) => theme.text_primary};
   font-size: 18px;
   font-weight: 600;
   cursor: pointer;
@@ -131,7 +131,7 @@ const Contact = () => {
     open: false,
     message: '',
     severity: 'success',
-    key: 0,
+    key: 0
   });
 
   const showToast = (message, severity) => {
@@ -139,7 +139,7 @@ const Contact = () => {
       open: true,
       message,
       severity,
-      key: prev.key + 1,
+      key: prev.key + 1
     }));
   };
 
@@ -150,7 +150,7 @@ const Contact = () => {
 
     setToast((prev) => ({
       ...prev,
-      open: false,
+      open: false
     }));
   };
 
@@ -160,7 +160,15 @@ const Contact = () => {
     if (status === 'submitting') {
       return;
     }
+    const formData = new FormData(form.current);
+    const email = formData.get('email')?.toString().trim() ?? '';
 
+    const latinEmailPattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+
+    if (!latinEmailPattern.test(email)) {
+      showToast('Email має містити лише латиницю', 'error');
+      return;
+    }
     setStatus('submitting');
 
     try {
@@ -186,13 +194,18 @@ const Contact = () => {
         <Title>Зв&apos;язок зі мною</Title>
         <Desc>Звертайтеся до мене з будь-якими питаннями чи пропозиціями!</Desc>
 
-        <ContactForm ref={form} onSubmit={handleSubmit}>
+        <ContactForm
+          ref={form}
+          onSubmit={handleSubmit}
+        >
           <ContactInput
             type="email"
             placeholder="Ваш Email"
             name="email"
             required
             disabled={status === 'submitting'}
+            pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"
+            title="Email має містити лише латиницю, цифри та стандартні символи email"
           />
           <ContactInput
             type="text"
@@ -215,7 +228,10 @@ const Contact = () => {
             required
             disabled={status === 'submitting'}
           />
-          <ContactButton type="submit" disabled={status === 'submitting'}>
+          <ContactButton
+            type="submit"
+            disabled={status === 'submitting'}
+          >
             {status === 'submitting' ? 'Лист надсилається...' : 'Надіслати'}
           </ContactButton>
         </ContactForm>
@@ -225,13 +241,13 @@ const Contact = () => {
           open={toast.open}
           autoHideDuration={6000}
           onClose={handleCloseToast}
-          anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+          anchorOrigin={{vertical: 'bottom', horizontal: 'center'}}
         >
           <Alert
             onClose={handleCloseToast}
             severity={toast.severity}
             variant="filled"
-            sx={{ width: '100%' }}
+            sx={{width: '100%'}}
           >
             {toast.message}
           </Alert>
