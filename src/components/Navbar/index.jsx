@@ -262,7 +262,7 @@ const MobileMenu = styled.div.withConfig({
   list-style: none;
 `;
 
-const MobileMenuLinks = styled(LinkR)`
+const MobileMenuLinks = styled.a`
   color: ${({theme}) => (theme.text_primary)};
   font-weight: 500;
   cursor: pointer;
