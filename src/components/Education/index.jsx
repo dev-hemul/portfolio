@@ -99,9 +99,9 @@ const Education = () => {
   return (
     <Container id="education">
             <Wrapper>
-                <Title>Education</Title>
+                <Title>Освіта</Title>
                 <Desc>
-                    My education has been a journey of self-discovery and growth. My educational details are as follows.
+                    Моя освіта була шляхом самопізнання та зростання. Деталі моєї освіти такі:
                 </Desc>
                 <TimelineSection>
                     <Timeline>

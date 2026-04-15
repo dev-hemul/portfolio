@@ -84,6 +84,7 @@ const ContactInput = styled.input`
   color: ${({ theme }) => theme.text_primary};
   border-radius: 12px;
   padding: 12px 16px;
+  margin-bottom: 20px;
   &:focus {
     border: 1px solid ${({ theme }) => theme.primary};
   }
@@ -144,15 +145,15 @@ const Contact = () => {
   return (
     <Container>
       <Wrapper>
-        <Title>Contact</Title>
-        <Desc>Feel free to reach out to me for any questions or opportunities!</Desc>
+        <Title>Зв'язок зі мною</Title>
+        <Desc>Звертайтеся до мене з будь-якими питаннями чи пропозиціями!</Desc>
         <ContactForm ref={form} onSubmit={handleSubmit}>
           {/*<ContactTitle>Email Me 🚀</ContactTitle>*/}
-          <ContactInput placeholder="Your Email" name="email" />
-          <ContactInput placeholder="Your Name" name="name" />
-          <ContactInput placeholder="Subject" name="subject" />
-          <ContactInputMessage placeholder="Message" rows="4" name="message" />
-          <ContactButton type="submit" value="Send" />
+          <ContactInput placeholder="Ваш Email" name="email" />
+          <ContactInput placeholder="Ваше ім'я" name="name" />
+          <ContactInput placeholder="Тема" name="subject" />
+          <ContactInputMessage placeholder="Ваше повідомлення" rows="4" name="message" />
+          <ContactButton type="submit" value="Надіслати" />
         </ContactForm>
         <Snackbar
           open={open}

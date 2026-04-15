@@ -56,6 +56,11 @@ import Eslint from "../assets/skills/eslint.svg";
 import Prettier from "../assets/skills/prettier.svg";
 import Husky from "../assets/skills/husky.svg";
 import CodeRabbit from "../assets/skills/coderabbit.svg";
+import Volta from "../assets/skills/volta.svg";
+
+import TravelMap from "../assets/projects/travel-map.png";
+import Positivius from "../assets/projects/positivius.png";
+import KroppFitness from "../assets/projects/kropp.png";
 
 export const Bio = {
   name: "Євгеній Нечуй-Вітер",
@@ -68,7 +73,7 @@ export const Bio = {
     "Я - вмотивована та різностороння особистість, яка завжди прагне братися за нові виклики. Маючи пристрасть до навчання, я націлений на досягнення результатів високої якості. Завдяки позитивному настрою та мисленню, орієнтованому на розвиток, я готовий робити вагомий внесок і досягати значних результатів.",
   github: "https://github.com/dev-hemul",
   resume:
-    "https://drive.google.com/file/d/17FNf7aGuGfvchuMz_PjJRZ8YAIrUAM94/view?usp=sharing",
+    "https://drive.google.com/file/d/1cBZJ4JzY64Lx-X0qjBWNEArezqIDqihC/view?usp=sharing",
   linkedin: "",
   twitter: "",
   instagram: "",
@@ -316,6 +321,10 @@ export const skills = [
         name: "CodeRabbit",
         image: CodeRabbit
       },
+      {
+        name: "Volta",
+        image: Volta
+      },
 
     ],
   },
@@ -327,58 +336,46 @@ export const experiences = [
     img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/flipr.jpeg?alt=media&token=1d72532a-45eb-4c1a-a81a-c9bed9fec543",
     role: "Fullstack Developer",
     company: "ProCode",
-    date: "Лютий 2025 - Березень 2026",
-    desc: "Working on Flipr Platforms, managing DevOps, and streamlining the process with automation.",
+    date: "Травень 2025 - Березень 2026",
+    desc: "Робота над Full-Stack застосунками з використанням ReactJS, Node JS, Express JS, MongoDB, Docker",
     skills: [
+      "ReactJS",
+      "Node JS",
+      "Express JS",
+      "MongoDB",
       "Docker",
-      "Terraform",
-      "AWS",
-      "EC2",
-      "Portainer",
-      "Nginx",
-      "JavaScript",
-      "TypeScript",
-      "Node Js",
-      " Next Js",
     ],
     doc: "https://media.licdn.com/dms/image/D4D2DAQFlp60ZqHuaFQ/profile-treasury-image-shrink_1280_1280/0/1691180828512?e=1692381600&v=beta&t=mM5Y_NE5EPlQhez5FAN6NLVSKcO_Ojt_9Gq3mnFGkAQ",
   },
   {
     id: 1,
     img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/neurobit.jpeg?alt=media&token=1cacbb7b-e5ea-4efb-9b3d-f5a31b9564ad",
-    role: "Frontend Engineer Intern",
-    company: "Neurobit",
-    date: "June 2023 - Present",
-    desc: "Working on the frontend of the web application using ReactJS, Redux, and Material UI.",
+    role: "Front-End developer",
+    company: "Sky Trade",
+    date: "Вересень 2024 - Квітень 2025",
+    desc: "Верстка Landing Page, робота з адмін-панелями сайтів, хостингом, DNS",
     skills: [
-      "ReactJS",
-      "Redux",
-      "NodeJs",
-      "Material UI",
+      "React",
+      "Tailwind",
       "HTML",
       "CSS",
       "JavaScript",
+      "SCSS",
     ],
     doc: "https://firebasestorage.googleapis.com/v0/b/buckoid-917cf.appspot.com/o/Screenshot%20from%202023-05-28%2023-20-46.png?alt=media&token=5570f995-e8f4-4f12-bb2f-73bcf4b20730",
   },
   {
     id: 2,
     img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/flipr.jpeg?alt=media&token=1d72532a-45eb-4c1a-a81a-c9bed9fec543",
-    role: "Fullstack Externship",
-    company: "Flipr",
-    date: "June 2023 - July 2023",
-    desc: "Built an employee management full stack web app used Docker and deployed on AWS ec2. I was the top performer in the program.",
+    role: "Web-розробник / Верстальник",
+    company: "Seta Decor",
+    date: "Липень 2023 - Серпень 2024",
+    desc: "Верстка Landing Page, акцій, пропозицій. Робота з адмін-панелями сайтів, хостингом, DNS",
     skills: [
-      "ReactJS",
-      "Redux",
-      "NodeJs",
-      "Material UI",
       "HTML",
       "CSS",
       "JavaScript",
-      "Docker",
-      "AWS",
-      "MongoDB",
+      "SCSS",
     ],
   }
 ];
@@ -386,105 +383,89 @@ export const experiences = [
 export const education = [
   {
     id: 0,
-    img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/Kiit.jpeg?alt=media&token=3839d520-c59d-4341-ad8f-0980c98de4dd",
-    school: "Kalinga Institute of Industrial Technology, Bhubaneswar",
-    date: "Oct 2021 - Sep 2025",
-    grade: "8.71 CGPA",
-    desc: "I am currently pursuing a Bachelor's degree in Computer Science and Engineering at Kalinga Institute of Industrial Technology, Bhubaneswar. I have completed 4 semesters and have a CGPA of 8.71. I have taken courses in Data Structures, Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, and Computer Networks, among others. I am also a member of the Google Developers Student Club (GDSC) at KIIT, where I am learning and working on exciting projects with a team of talented developers.",
-    degree: "Bachelor of Technology - BTech, Computer Science and Engineering",
+    img: "",
+    school: "ProCode",
+    date: "Січень 2024 - Квітень 2025",
+    grade: "",
+    desc: "Навчання в IT-школі ProCode. Отримав 100% фокус на практиці: Під час курсу я опанував сучасний стек технологій: від верстки (HTML/CSS, SCSS) до клієнтської логіки на JavaScript та створення серверної частини з Node.js та Express.js. Особливу увагу приділили React.js, Redux та роботі з базами даних, такими як MongoDB. Отримав досвід в командній розробці використовуючи систему контролю версій Git",
   },
   {
     id: 1,
     img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/methodist.png?alt=media&token=018a1b18-e2dd-4f34-8855-cff1b6b69fd3",
-    school: "Methodist School, Dankuni",
-    date: "Apr 2019 - Apr 2025",
-    grade: "88.2%",
-    desc: "I completed my class 12 high school Education at Methodist School, Dankuni, where I studied Science with Computer Science.",
-    degree: "ISC(XII), Science with Computer",
-  },
-  {
-    id: 2,
-    img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/methodist.png?alt=media&token=018a1b18-e2dd-4f34-8855-cff1b6b69fd3",
-    school: "Methodist School, Dankuni",
-    date: "Apr 2017 - Apr 2019",
-    grade: "92.3%",
-    desc: "I completed my class 10 Education at Methodist School, Dankuni, where I studied Science with Computer Application.",
-    degree: "ICSC(X), Science with Computer",
+    school: "ХАІ",
+    date: "2010 - Apr 2015",
+    grade: "",
+    desc: "Закінчив 5 курсів Харьківсього авіаційного інституту. Вивчав Вища математика, Комп’ютерна графіка, Комп’ютерні технології, WEB-програмування, Алгоритми та методі обчислень, Цифрова обробка сигналів, Телекомунікаційні та інформаційні мережі, Систему зв’язку",
+    degree: "Спеціаліст",
   },
 ];
 
 export const projects = [
   {
-    id: 9,
-    title: "Trackify",
-    date: "Jun 2023 - Jul 2023",
+    id: 0,
+    title: "Travel-map",
+    date: "2025-2026",
     description:
-      "Trackify is a web application designed to streamline task management and enhance productivity in the workplace. It provides a user-friendly interface for employers to keep track of their employees' daily work activities and empowers employees to log their tasks efficiently. \nAdmin Credentials: # Email: testadmin@gmail.com #Password- 123@testadmin, Employee Credentials:	#Email: testemployee@gmail.com	#Password- 123@Testemployee",
-    image:
-      "https://user-images.githubusercontent.com/64485885/255202416-e1f89b04-2788-45b0-abc2-9dec616669e2.png",
+      "Фулстек застосунок на базі MongoDB, Express.js, React, Node.js. Проект створений для людей, які люблять подорожувати та хочуть ділитися своїми враженнями.Буде корисним для тих, хто шукає натхнення для наступної подорожі або хоче дізнатися більше про різні місця, спланувати свою подорож. Проект дозволяє користувачам додавати свої маршрути, ділитися фотографіями та враженнями, а також взаємодіяти з іншими користувачами.",
+    image: TravelMap,
     tags: [
+      "React Js",
+      "Node JS",
+      "Express JS",
+      "Redux Toolkit",
+      "MongoDB",
       "Docker",
-      "AWS",
-      "DuckDNS",
       "Eslint",
+      "Prettier",
       "Husky",
       "CI/CD",
-      "React Js",
-      "MongoDb",
-      "Node Js",
-      "Express Js",
-      "Redux",
+      "PNPM",
     ],
     category: "web app",
-    github: "https://github.com/rishavchanda/Trackify",
-    webapp: "https://trackify.duckdns.org",
-  },
-  {
-    id: 0,
-    title: "Podstream",
-    date: "Apr 2023 - May 2023",
-    description:
-      "Developed a full-stack web application that allows users to search for, play, and pause their favorite podcasts on demand and create podcasts. Implemented user authentication using Google Auth and Jwt Auth, made responsive user interface with React JS that provides users with a seamless experience across all devices. Practiced agile methodologies to optimize team efficiency and communication.",
-    image:
-      "https://user-images.githubusercontent.com/64485885/234602896-a1bd8bcc-b72b-4821-83d6-8ad885bf435e.png",
-    tags: ["React Js", "MongoDb", "Node Js", "Express Js", "Redux"],
-    category: "web app",
-    github: "https://github.com/rishavchanda/Podstream",
-    webapp: "https://podstream.netlify.app/",
-    member: [
-      {
-        name: "Rishav Chanda",
-        img: "https://avatars.githubusercontent.com/u/64485885?v=4",
-        linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
-        github: "https://github.com/rishavchanda/",
-      },
-      {
-        name: "Upasana Chaudhuri",
-        img: "https://avatars.githubusercontent.com/u/100614635?v=4",
-        linkedin: "https://www.linkedin.com/in/upasana-chaudhuri-2a2bb5231/",
-        github: "https://github.com/upasana0710",
-      },
-    ],
+    github: "https://github.com/dev-hemul/travel-map",
+    webapp: "https://travel-map.site/",
   },
   {
     id: 1,
-    title: "Vexa",
-    date: "Oct 2022 - Present",
+    title: "Positivius",
+    date: "2025",
     description:
-      "Designed and developed the Vexa project, a project management app that helps users and teams stay organized and on track. Implemented key features such as task tracking, team collaboration, and time tracking to improve productivity and project outcomes and also invite team/project members. The plan is to add a community of users where they can find developers and other team members and chat system implementation.",
-    image:
-      "https://user-images.githubusercontent.com/64485885/234916413-96296f13-fe4b-4cc4-b215-e72bd7c27928.png",
+      "Landing Page маркетингового агенства",
+    image: Positivius,
+    tags: ["HTML", "CSS", "JS", "SCSS"],
+    category: "web app",
+    github: "https://github.com/dev-hemul/positivius",
+    webapp: "https://dev-hemul.github.io/positivius/",
+    member: [
+      {
+        name: "",
+        img: "",
+        linkedin: "",
+        github: "",
+      },
+      {
+        name: "",
+        img: "",
+        linkedin: "",
+        github: "",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "Kropp Fitness",
+    date: "Oct 2022 - Present",
+    description: "Landing Page по події фітнесу",
+    image: KroppFitness,
     tags: [
-      "React Js",
-      "MongoDb",
-      "Node Js",
-      "Express Js",
-      "Redux",
-      "NodeMailer",
+      "HTML",
+      "CSS",
+      "JS",
+      "SCSS",
     ],
     category: "web app",
-    github: "https://github.com/rishavchanda/Project-Management-App",
-    webapp: "https://vexa-app.netlify.app/",
+    github: "https://github.com/dev-hemul/kropp-fitness",
+    webapp: "https://dev-hemul.github.io/kropp-fitness/",
   },
 ];
 
