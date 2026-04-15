@@ -21,6 +21,9 @@ const Wrapper = styled.div`
   linear-gradient(141.27deg, rgba(0, 70, 209, 0) 50%, rgba(0, 70, 209, 0.15) 100%);
   width: 100%;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 98%, 0 100%);
+  @media screen and (max-width: 768px) {
+    clip-path: none;
+  }
 `
 
 function App() {
