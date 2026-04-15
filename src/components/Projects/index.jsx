@@ -44,7 +44,7 @@ const Title = styled.h1`
   }
 `;
 
-const Desk = styled.p`
+const Desc = styled.p`
   font-size: 18px;
   max-width: 600px;
   text-align: center;
@@ -105,50 +105,54 @@ const CardContainer = styled.div`
   gap: 28px;
 `;
 
-const Projects = () => {
-  const [toggle, setToggle] = useState('all')
-
+const Projects = ({openModal,setOpenModal}) => {
+  const [toggle, setToggle] = useState('all');
   return (
     <Container id="projects">
       <Wrapper>
-        <Title>Проекти</Title>
-        <Desk>
-          Ось деякі з моїх проектів
-        </Desk>
+        <Title>Projects</Title>
+        <Desc>
+          I have worked on a wide range of projects. From web apps to android apps. Here are some of my projects.
+        </Desc>
         <ToggleButtonGroup >
           {toggle === 'all' ?
-            <ToggleButton $active onClick={() => setToggle('all')}>All</ToggleButton>
+            <ToggleButton active value="all" onClick={() => setToggle('all')}>All</ToggleButton>
             :
-            <ToggleButton onClick={() => setToggle('all')}>All</ToggleButton>
+            <ToggleButton value="all" onClick={() => setToggle('all')}>All</ToggleButton>
           }
           <Divider />
           {toggle === 'web app' ?
-            <ToggleButton $active onClick={() => setToggle('web app')}>WEB APP'S</ToggleButton>
+            <ToggleButton active value="web app" onClick={() => setToggle('web app')}>WEB APP'S</ToggleButton>
             :
-            <ToggleButton onClick={() => setToggle('web app')}>WEB APP'S</ToggleButton>
+            <ToggleButton value="web app" onClick={() => setToggle('web app')}>WEB APP'S</ToggleButton>
           }
           {/*<Divider />
           {toggle === 'android app' ?
-            <ToggleButton $active onClick={() => setToggle('android app')}>ANDROID APP'S</ToggleButton>
+            <ToggleButton active value="android app" onClick={() => setToggle('android app')}>ANDROID APP'S</ToggleButton>
             :
-            <ToggleButton onClick={() => setToggle('android app')}>ANDROID APP'S</ToggleButton>
+            <ToggleButton value="android app" onClick={() => setToggle('android app')}>ANDROID APP'S</ToggleButton>
           }
           <Divider />
           {toggle === 'machine learning' ?
-            <ToggleButton $active onClick={() => setToggle('machine learning')}>MACHINE LEARNING</ToggleButton>
+            <ToggleButton active value="machine learning" onClick={() => setToggle('machine learning')}>MACHINE LEARNING</ToggleButton>
             :
-            <ToggleButton onClick={() => setToggle('machine learning')}>MACHINE LEARNING</ToggleButton>
+            <ToggleButton value="machine learning" onClick={() => setToggle('machine learning')}>MACHINE LEARNING</ToggleButton>
           }*/}
         </ToggleButtonGroup>
-
         <CardContainer>
-          {toggle === 'all' &&
-            projects.map((project) => <ProjectCard key={`project-${project.id}`} project={project}/>)}
-          {projects.filter((item) => item.category === toggle).map((project) => <ProjectCard key={`project-filtered-${project.id}`} project={project}/>)}
+          {toggle === 'all' && projects
+            .map((project) => (
+              <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
+            ))}
+          {projects
+            .filter((item) => item.category == toggle)
+            .map((project) => (
+              <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
+            ))}
         </CardContainer>
       </Wrapper>
     </Container>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects
