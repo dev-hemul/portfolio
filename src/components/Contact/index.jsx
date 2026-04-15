@@ -109,7 +109,7 @@ const ContactButton = styled.button`
   text-align: center;
   background: linear-gradient(225deg, hsla(271, 100%, 50%, 1) 0%, hsla(294, 100%, 50%, 1) 100%);
   padding: 13px 16px;
-  margin-top: 2px;
+  margin-top: 20px;
   border-radius: 12px;
   border: none;
   color: ${({ theme }) => theme.text_primary};
