@@ -33,7 +33,6 @@ const Wrapper = styled.div`
 function App() {
 
   const [openModal, setOpenModal] = useState({ state: false, project: null });
-  console.log(openModal)
 
   return (
     <ThemeProvider theme={darkTheme}>

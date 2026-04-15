@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Link as LinkR} from 'react-router-dom';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -25,10 +26,40 @@ const FooterWrapper = styled.footer`
   color: ${({ theme }) => theme.text_primary};
 `;
 
-const Logo = styled.h1`
-  font-weight: 600;
-  font-size: 20px;
-  color: ${({ theme }) => theme.primary};
+const NavLogo = styled(LinkR)`
+  width: auto;
+  padding: 0 6px;
+  display: flex;
+  justify-self: flex-start;
+  cursor: pointer;
+  text-decoration: none;
+  align-items: center;
+  color: ${({theme}) => (theme.primary)};
+  @media screen and (max-width: 768px) {
+    padding: 0;
+  }
+`;
+
+const NavLogoContent = styled.div`
+  display: flex;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  white-space: nowrap;
+  
+  @media screen and (max-width: 1100px) {
+    font-size: 16px;
+  }
+  
+  @media screen and (max-width: 640px) {
+    font-size: 15px;
+  }
+  
+  @media screen and (max-width: 480px) {
+    font-size: 14px;
+  }
 `;
 
 const Nav = styled.nav`
@@ -61,6 +92,62 @@ color: ${({ theme }) => theme.text_primary};
   }
 `;
 
+const Bracket = styled.div`
+  color: ${({theme}) => (theme.primary)};
+  font-size: 32px;
+  font-weight: 500;
+  margin-right: 5px;
+  
+  @media screen and (max-width: 1100px) {
+    font-size: 26px;
+  }
+  
+  @media screen and (max-width: 640px) {
+    font-size: 22px;
+  }
+  
+  @media screen and (max-width: 480px) {
+    font-size: 20px;
+  }
+`;
+
+const BracketRight = styled.div`
+  color: ${({theme}) => (theme.primary)};
+  font-size: 32px;
+  font-weight: 500;
+  margin-left: 5px;
+  
+  @media screen and (max-width: 1100px) {
+    font-size: 26px;
+  }
+  
+  @media screen and (max-width: 640px) {
+    font-size: 22px;
+  }
+  
+  @media screen and (max-width: 480px) {
+    font-size: 20px;
+  }
+`;
+
+const Slash = styled.div`
+  color: ${({theme}) => (theme.primary)};
+  font-size: 32px;
+  font-weight: 500;
+  
+  @media screen and (max-width: 1100px) {
+    font-size: 26px;
+  }
+  
+  @media screen and (max-width: 640px) {
+    font-size: 22px;
+  }
+  
+  @media screen and (max-width: 480px) {
+    font-size: 20px;
+  }
+`;
+
 const SocialMediaIcons = styled.div`
   display: flex;
   margin-top: 1rem;
@@ -88,7 +175,15 @@ function Footer() {
   return (
     <FooterContainer>
       <FooterWrapper>
-        <Logo>Нечуй-Вітер Євгеній </Logo>
+        <NavLogo to='/'>
+          <NavLogoContent>
+            <Bracket>{"<"}</Bracket>
+            Нечуй-Вітер
+            <Slash>/</Slash>
+            Євгеній
+            <BracketRight>{">"}</BracketRight>
+          </NavLogoContent>
+        </NavLogo>
         <Nav>
           <NavLink href="#about">Про себе</NavLink>
           <NavLink href="#skills">Навички</NavLink>

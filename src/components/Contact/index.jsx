@@ -175,7 +175,6 @@ const Contact = () => {
       setStatus('success');
       showToast('Лист успішно відправлено', 'success');
     } catch (error) {
-      console.error('Email send failed:', error);
       setStatus('error');
       showToast('Не вдалось відправити лист, спробуйте ще раз', 'error');
     }

@@ -5,16 +5,16 @@ import {projects} from "../../data/constants";
 
 const Container = styled.div`
   background: linear-gradient(343.07deg, rgba(132, 59, 206, 0.06) 5.71%, rgba(132, 59, 206, 0) 64.83%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-    align-items: center;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 98%, 0 100%);
-    @media screen and (max-width: 768px) {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 99%, 0 100%);
-    }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  align-items: center;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 98%, 0 100%);
+  @media screen and (max-width: 768px) {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 99%, 0 100%);
+  }
 `;
 
 const Wrapper = styled.div`
@@ -25,7 +25,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  gap: 12px; 
+  gap: 12px;
   color: ${({theme}) => (theme.text_primary)};
   padding: 10px 0 100px 0;
 `;
@@ -35,9 +35,9 @@ const Title = styled.h1`
   font-weight: 600;
   text-align: center;
   margin-top: 20px;
-  
+
   color: ${({theme}) => (theme.text_primary)};
-  
+
   @media screen and (max-width: 768px) {
     margin-top: 12px;
     font-size: 32px;
@@ -49,7 +49,7 @@ const Desc = styled.p`
   max-width: 600px;
   text-align: center;
   color: ${({theme}) => (theme.text_secondary)};
-  
+
   @media screen and (max-width: 768px) {
     font-size: 16px;
   }
@@ -63,29 +63,28 @@ const ToggleButtonGroup = styled.div`
   border-radius: 12px;
   font-weight: 500;
   margin: 22px 0;
-  
+
   @media screen and (max-width: 768px) {
     font-size: 12px;
   }
 `;
 
 const ToggleButton = styled.div.withConfig({
-  shouldForwardProp: (prop) => !['$active'].includes(prop),
+  shouldForwardProp: (prop) => !['$active'].includes(prop)
 })`
   padding: 8px 18px;
   cursor: pointer;
   border-radius: 6px;
-  
-  ${({$active, theme}) => 
-    $active && 
+
+  ${({$active, theme}) =>
+    $active &&
     `
-    background-color: ${(theme.primary+20)};
+    background-color: ${(theme.primary + 20)};
     `}
-  
   &:hover {
-    background-color: ${({theme}) => (theme.primary+8)};
+    background-color: ${({theme}) => (theme.primary + 8)};
   }
-  
+
   @media screen and (max-width: 768px) {
     padding: 6px 8px;
     border-radius: 4px;
@@ -105,7 +104,7 @@ const CardContainer = styled.div`
   gap: 28px;
 `;
 
-const Projects = ({openModal,setOpenModal}) => {
+const Projects = ({openModal, setOpenModal}) => {
   const [toggle, setToggle] = useState('all');
   return (
     <Container id="projects">
@@ -114,17 +113,31 @@ const Projects = ({openModal,setOpenModal}) => {
         <Desc>
           Ось деякі з моїх проектів:
         </Desc>
-        <ToggleButtonGroup >
+        <ToggleButtonGroup>
           {toggle === 'all' ?
-            <ToggleButton active value="all" onClick={() => setToggle('all')}>All</ToggleButton>
+            <ToggleButton
+              $active
+              value="all"
+              onClick={() => setToggle('all')}
+            >All</ToggleButton>
             :
-            <ToggleButton value="all" onClick={() => setToggle('all')}>All</ToggleButton>
+            <ToggleButton
+              value="all"
+              onClick={() => setToggle('all')}
+            >All</ToggleButton>
           }
           <Divider />
           {toggle === 'web app' ?
-            <ToggleButton active value="web app" onClick={() => setToggle('web app')}>WEB APP'S</ToggleButton>
+            <ToggleButton
+              $active
+              value="web app"
+              onClick={() => setToggle('web app')}
+            >WEB APP'S</ToggleButton>
             :
-            <ToggleButton value="web app" onClick={() => setToggle('web app')}>WEB APP'S</ToggleButton>
+            <ToggleButton
+              value="web app"
+              onClick={() => setToggle('web app')}
+            >WEB APP'S</ToggleButton>
           }
           {/*<Divider />
           {toggle === 'android app' ?
@@ -140,14 +153,23 @@ const Projects = ({openModal,setOpenModal}) => {
           }*/}
         </ToggleButtonGroup>
         <CardContainer>
-          {toggle === 'all' && projects
-            .map((project) => (
-              <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
-            ))}
+          {toggle === 'all' && projects.map((project) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              openModal={openModal}
+              setOpenModal={setOpenModal}
+            />
+          ))}
           {projects
-            .filter((item) => item.category == toggle)
+            .filter((item) => item.category === toggle)
             .map((project) => (
-              <ProjectCard project={project} openModal={openModal} setOpenModal={setOpenModal}/>
+              <ProjectCard
+                key={project.id}
+                project={project}
+                openModal={openModal}
+                setOpenModal={setOpenModal}
+              />
             ))}
         </CardContainer>
       </Wrapper>
