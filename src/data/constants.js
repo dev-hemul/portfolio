@@ -422,7 +422,7 @@ export const projects = [
       "PNPM",
     ],
     category: "web app",
-    github: "",
+    github: "https://github.com/dev-hemul/travel-map",
     webapp: "https://tripmap.site/",
   },
   {
