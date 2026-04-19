@@ -73,7 +73,7 @@ export const Bio = {
     "Я - вмотивована та різностороння особистість, яка завжди прагне братися за нові виклики. Маючи пристрасть до навчання, я націлений на досягнення результатів високої якості. Завдяки позитивному настрою та мисленню, орієнтованому на розвиток, я готовий робити вагомий внесок і досягати значних результатів.",
   github: "https://github.com/dev-hemul",
   resume:
-    "https://drive.google.com/file/d/1cBZJ4JzY64Lx-X0qjBWNEArezqIDqihC/view?usp=sharing",
+    "https://drive.google.com/file/d/1y-vlYUdGsLjS5YZGWuB50uWVlE7gaAEp/view?usp=sharing",
   linkedin: "",
   twitter: "",
   instagram: "",
