@@ -423,7 +423,7 @@ export const projects = [
     ],
     category: "web app",
     github: "",
-    webapp: "https://travel-map.site/",
+    webapp: "https://tripmap.site/",
   },
   {
     id: 1,
