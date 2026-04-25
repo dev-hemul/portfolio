@@ -32,6 +32,7 @@ import Grammy from "../assets/skills/grammy.svg";
 import Multer from "../assets/skills/multer.png";
 import Swagger from "../assets/skills/swagger.svg";
 import Mongoose from "../assets/skills/mongoose.js.svg";
+import Socket from "../assets/skills/socket.io.svg";
 
 import DockerImg from "../assets/skills/docker.svg";
 import DigitalOcean from "../assets/skills/digital-ocean.svg";
@@ -59,6 +60,7 @@ import CodeRabbit from "../assets/skills/coderabbit.svg";
 import Volta from "../assets/skills/volta.svg";
 
 import TravelMap from "../assets/projects/travel-map.png";
+import Chat from "../assets/projects/chat.png";
 import Positivius from "../assets/projects/positivius.png";
 import KroppFitness from "../assets/projects/kropp.png";
 
@@ -220,6 +222,10 @@ export const skills = [
       {
         name: "Swagger",
         image: Swagger
+      },
+      {
+        name: "Socket.IO",
+        image: Socket
       },
     ],
   },
@@ -425,8 +431,29 @@ export const projects = [
     github: "",
     webapp: "https://tripmap.site/",
   },
+
   {
-    id: 1,
+    id: 0,
+    title: "Real Time Chat",
+    date: "2026",
+    description:
+      "Вебзастосунок, який дозволяє користувачам створювати кімнати та обмінюватися повідомленнями миттєво, без перезавантаження сторінки. Приєднання до кімнати за назвою (користувач обирає ім'я та кімнату), обмін текстовими повідомленнями в реальному часі, індикатор друку – показує, хто зараз набирає текст, автоматичне завантаження останніх 50 повідомлень після входу в кімнату, очищення історії чату для всіх учасників кімнати, збереження сесії (після перезавантаження сторінки користувач автоматично повертається до своєї кімнати), вихід з кімнати або повне від'єднання",
+    image: Chat,
+    tags: [
+      "React Js",
+      "Node JS",
+      "Express JS",
+      "Tailwind",
+      "MongoDB",
+      "DigitalOcean",
+      "Socket.io",
+    ],
+    category: "web app",
+    github: "https://github.com/dev-hemul/real-time-chat-socket.io",
+    webapp: "https://143.244.160.141.sslip.io/",
+  },
+  {
+    id: 2,
     title: "Positivius",
     date: "2025",
     description:
@@ -452,7 +479,7 @@ export const projects = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: "Kropp Fitness",
     date: "Oct 2022 - Present",
     description: "Landing Page по події фітнесу",
