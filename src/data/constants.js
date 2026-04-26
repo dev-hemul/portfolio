@@ -110,10 +110,10 @@ export const skills = [
         name: "Tailwind",
         image: Tailwind,
       },
-      {
+      /*{
         name: "React Hook Form",
         image: ReactHookForm,
-      },
+      },*/
       {
         name: "React Select",
         image: ReactSelect,
@@ -122,10 +122,10 @@ export const skills = [
         name: "Axios",
         image: Axios,
       },
-      {
+      /*{
         name: "Zod",
         image: Zod,
-      },
+      },*/
       {
         name: "ReactToastify",
         image: ReactToastify,
@@ -481,7 +481,7 @@ export const projects = [
   {
     id: 3,
     title: "Kropp Fitness",
-    date: "Oct 2022 - Present",
+    date: "2025",
     description: "Landing Page по події фітнесу",
     image: KroppFitness,
     tags: [
