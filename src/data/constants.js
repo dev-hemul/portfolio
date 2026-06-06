@@ -1,8 +1,10 @@
 import ReactImg from "../assets/skills/react-js.svg";
+import NextJsImg from "../assets/skills/next-js.svg";
+import TanstackQuery from "../assets/skills/tanstack-query.svg";
+import Zustand from "../assets/skills/zustand.svg";
 import ReactRouter from "../assets/skills/react-router.svg";
 import ReduxImg from "../assets/skills/redux.svg";
 import TypeScript from "../assets/skills/typesсript.svg";
-import NextJsImg from "../assets/skills/next-js.svg";
 import Tailwind from "../assets/skills/tailwind.svg";
 import ReactHookForm from "../assets/skills/react-hook-form.svg";
 import ReactSelect from "../assets/skills/react-select.svg";
@@ -87,6 +89,18 @@ export const skills = [
     title: "Frontend",
     skills: [
       {
+        name: "Next JS",
+        image: NextJsImg,
+      },
+      {
+        name: "Tanstack Query",
+        image: TanstackQuery,
+      },
+      {
+        name: "Zustand",
+        image: Zustand,
+      },
+      {
         name: "React JS",
         image: ReactImg,
       },
@@ -102,18 +116,14 @@ export const skills = [
         name: "TypeScript",
         image: TypeScript
       },
-      /*{
-        name: "Next JS",
-        image: NextJsImg,
-      },*/
       {
         name: "Tailwind",
         image: Tailwind,
       },
-      /*{
+      {
         name: "React Hook Form",
         image: ReactHookForm,
-      },*/
+      },
       {
         name: "React Select",
         image: ReactSelect,
@@ -122,10 +132,10 @@ export const skills = [
         name: "Axios",
         image: Axios,
       },
-      /*{
+      {
         name: "Zod",
         image: Zod,
-      },*/
+      },
       {
         name: "ReactToastify",
         image: ReactToastify,
@@ -134,10 +144,10 @@ export const skills = [
         name: "i18Next",
         image: I18Next,
       },
-      /*{
+      {
         name: "Sass",
         image: Sass,
-      },*/
+      },
       {
         name: "Motion",
         image: Motion,
