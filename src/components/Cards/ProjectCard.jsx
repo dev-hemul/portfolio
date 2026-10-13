@@ -43,6 +43,7 @@ const Image = styled.img`
     height: 180px;
     border-radius: 10px;
     box-shadow: 0 0 16px 2px rgba(0,0,0,0.3);
+    object-fit: cover;
 `
 
 const Tags = styled.div`
@@ -126,7 +127,7 @@ const ProjectCards = ({project,setOpenModal}) => {
         <Card onClick={() => setOpenModal({state: true, project: project})}>
             <Image src={project.image}/>
             <Tags>
-                {project.tags?.map((tag, index) => (
+                {project.tags?.map((tag) => (
                 <Tag key={tag}>{tag}</Tag>
                 ))}
             </Tags>

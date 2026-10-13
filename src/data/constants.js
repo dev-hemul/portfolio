@@ -61,8 +61,9 @@ import Husky from "../assets/skills/husky.svg";
 import CodeRabbit from "../assets/skills/coderabbit.svg";
 import Volta from "../assets/skills/volta.svg";
 
-import TravelMap from "../assets/projects/travel-map.png";
+import Goseechat from "../assets/projects/goseechat.png";
 import Chat from "../assets/projects/chat.png";
+import TravelMap from "../assets/projects/travel-map.png";
 import Positivius from "../assets/projects/positivius.png";
 import KroppFitness from "../assets/projects/kropp.png";
 
@@ -77,7 +78,7 @@ export const Bio = {
     "Я - вмотивована та різностороння особистість, яка завжди прагне братися за нові виклики. Маючи пристрасть до навчання, я націлений на досягнення результатів високої якості. Завдяки позитивному настрою та мисленню, орієнтованому на розвиток, я готовий робити вагомий внесок і досягати значних результатів.",
   github: "https://github.com/dev-hemul",
   resume:
-    "https://drive.google.com/file/d/1y-vlYUdGsLjS5YZGWuB50uWVlE7gaAEp/view?usp=sharing",
+    "https://drive.google.com/file/d/1V1_rBHLDBE0NdCGy-VucuO2FI3ZiDqYI/view",
   linkedin: "",
   twitter: "",
   instagram: "",
@@ -349,10 +350,28 @@ export const skills = [
 export const experiences = [
   {
     id: 0,
+    img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/neurobit.jpeg?alt=media&token=1cacbb7b-e5ea-4efb-9b3d-f5a31b9564ad",
+    role: "Fullstack Developer",
+    company: "Yellow Duck Coders",
+    date: "Лютий 2026 - Жовтень 2026",
+    desc: "Продуктова розробка і розвиток соціальної мережі",
+    skills: [
+      "React",
+      "Next js",
+      "SCSS",
+      "TanStack query",
+      "Axios",
+      "Next-intl",
+      "React hook form"
+    ],
+    doc: "https://firebasestorage.googleapis.com/v0/b/buckoid-917cf.appspot.com/o/Screenshot%20from%202023-05-28%2023-20-46.png?alt=media&token=5570f995-e8f4-4f12-bb2f-73bcf4b20730",
+  },
+  {
+    id: 1,
     img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/flipr.jpeg?alt=media&token=1d72532a-45eb-4c1a-a81a-c9bed9fec543",
     role: "Fullstack Developer",
-    company: "ProCode",
-    date: "Травень 2025 - Березень 2026",
+    company: "Partner Dev",
+    date: "Лютий 2025 - Лютий 2026",
     desc: "Робота над Full-Stack застосунками з використанням ReactJS, Node JS, Express JS, MongoDB, Docker",
     skills: [
       "ReactJS",
@@ -362,23 +381,6 @@ export const experiences = [
       "Docker",
     ],
     doc: "https://media.licdn.com/dms/image/D4D2DAQFlp60ZqHuaFQ/profile-treasury-image-shrink_1280_1280/0/1691180828512?e=1692381600&v=beta&t=mM5Y_NE5EPlQhez5FAN6NLVSKcO_Ojt_9Gq3mnFGkAQ",
-  },
-  {
-    id: 1,
-    img: "https://firebasestorage.googleapis.com/v0/b/flexi-coding.appspot.com/o/neurobit.jpeg?alt=media&token=1cacbb7b-e5ea-4efb-9b3d-f5a31b9564ad",
-    role: "Front-End developer",
-    company: "Sky Trade",
-    date: "Вересень 2024 - Квітень 2025",
-    desc: "Верстка Landing Page, робота з адмін-панелями сайтів, хостингом, DNS",
-    skills: [
-      "React",
-      "Tailwind",
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "SCSS",
-    ],
-    doc: "https://firebasestorage.googleapis.com/v0/b/buckoid-917cf.appspot.com/o/Screenshot%20from%202023-05-28%2023-20-46.png?alt=media&token=5570f995-e8f4-4f12-bb2f-73bcf4b20730",
   },
   {
     id: 2,
@@ -401,7 +403,7 @@ export const education = [
     id: 0,
     img: "",
     school: "ProCode",
-    date: "Січень 2024 - Квітень 2025",
+    date: "2023 - 2024",
     grade: "",
     desc: "Навчання в IT-школі ProCode. Отримав 100% фокус на практиці: Під час курсу я опанував сучасний стек технологій: від верстки (HTML/CSS, SCSS) до клієнтської логіки на JavaScript та створення серверної частини з Node.js та Express.js. Особливу увагу приділили React.js, Redux та роботі з базами даних, такими як MongoDB. Отримав досвід в командній розробці використовуючи систему контролю версій Git",
   },
@@ -411,14 +413,39 @@ export const education = [
     school: "ХАІ",
     date: "2010 - Apr 2015",
     grade: "",
-    desc: "Закінчив 5 курсів Харьківсього авіаційного інституту. Вивчав Вища математика, Комп’ютерна графіка, Комп’ютерні технології, WEB-програмування, Алгоритми та методі обчислень, Цифрова обробка сигналів, Телекомунікаційні та інформаційні мережі, Систему зв’язку",
+    desc: "Закінчив 5 курсів Харьківсього авіаційного інституту. Вивчав Вищу математика, Комп’ютерну графіка, Комп’ютерні технології, WEB-програмування, Алгоритми та методі обчислень, Цифрову обробку сигналів, Телекомунікаційні та інформаційні мережі, Систему зв’язку",
     degree: "Спеціаліст",
   },
 ];
 
 export const projects = [
+
   {
     id: 0,
+    title: "GoSeeChat",
+    date: "2026",
+    description:
+      "GoSeeChat веб-додаток на базі React, Next.js, PHP, PostgreSql, який представляє собою платформу для контент-креаторів із функціями чату, монетизації та управління контентом.",
+    image: Goseechat,
+    tags: [
+      "React Js",
+      "Next JS",
+      "Php",
+      "Docker",
+      "AWS",
+      "Eslint",
+      "Prettier",
+      "Husky",
+      "CI/CD",
+      "PNPM",
+    ],
+    category: "web app",
+    github: "",
+    webapp: "https://goseechat.com/en",
+  },
+
+  {
+    id: 1,
     title: "Travel-map",
     date: "2025-2026",
     description:
@@ -438,14 +465,14 @@ export const projects = [
       "PNPM",
     ],
     category: "web app",
-    github: "",
+    github: "https://github.com/dev-hemul/travel-map",
     webapp: "https://tripmap.site/",
   },
 
   {
-    id: 0,
+    id: 2,
     title: "Real Time Chat",
-    date: "2026",
+    date: "2025",
     description:
       "Вебзастосунок, який дозволяє користувачам створювати кімнати та обмінюватися повідомленнями миттєво, без перезавантаження сторінки. Приєднання до кімнати за назвою (користувач обирає ім'я та кімнату), обмін текстовими повідомленнями в реальному часі, індикатор друку – показує, хто зараз набирає текст, автоматичне завантаження останніх 50 повідомлень після входу в кімнату, очищення історії чату для всіх учасників кімнати, збереження сесії (після перезавантаження сторінки користувач автоматично повертається до своєї кімнати), вихід з кімнати або повне від'єднання",
     image: Chat,
@@ -463,7 +490,7 @@ export const projects = [
     webapp: "https://143.244.160.141.sslip.io/",
   },
   {
-    id: 2,
+    id: 3,
     title: "Positivius",
     date: "2025",
     description:
@@ -489,7 +516,7 @@ export const projects = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: "Kropp Fitness",
     date: "2025",
     description: "Landing Page по події фітнесу",
